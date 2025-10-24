@@ -1,0 +1,28 @@
+# Minimal workflow file for repositories using reusable workflow
+#
+# Installation:
+#   mkdir -p .github/workflows
+#   curl -o .github/workflows/glu-review.yml \
+#     https://raw.githubusercontent.com/SamueleTorregrossa/ws_reviewer/main/.github/workflows/glu-review.yml
+#
+# Usage:
+#   Comment "/review" on any pull request
+#
+# Note: Secrets (REVIEWER_TOKEN, ANTHROPIC_API_KEY, GLU_APP_ID, GLU_PRIVATE_KEY)
+#       are configured at the organization level
+
+name: Glu Code Review
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  review:
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/review')
+    uses: SamueleTorregrossa/ws_reviewer/.github/workflows/glu-review-reusable.yml@main
+    secrets:
+      REVIEWER_TOKEN: ${{ secrets.REVIEWER_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GLU_APP_ID: ${{ secrets.GLU_APP_ID }}
+      GLU_PRIVATE_KEY: ${{ secrets.GLU_PRIVATE_KEY }}

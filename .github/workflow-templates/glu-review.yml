@@ -1,10 +1,5 @@
 # Minimal workflow file for repositories using reusable workflow
 #
-# Installation:
-#   mkdir -p .github/workflows
-#   curl -o .github/workflows/glu-review.yml \
-#     https://raw.githubusercontent.com/whitespaceenergy/internal-whitespace-glu-reviewer/main/.github/workflows/glu-review.yml
-#
 # Usage:
 #   Comment "/review" on any pull request
 #

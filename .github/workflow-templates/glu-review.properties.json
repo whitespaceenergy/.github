@@ -1,0 +1,9 @@
+{
+  "name": "Glu Code Review Workflow",
+  "description": "Adds AI-powered code reviews triggered by /review comments on PRs. Requires organization secrets: REVIEWER_TOKEN, ANTHROPIC_API_KEY, GLU_APP_ID, GLU_PRIVATE_KEY",
+  "iconName": "code-review",
+  "categories": [
+    "Code Review",
+    "Automation"
+  ]
+}

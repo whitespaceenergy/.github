@@ -1,9 +1,6 @@
 {
   "name": "Glu Code Review Workflow",
-  "description": "Adds AI-powered code reviews!"
+  "description": "Adds AI-powered code reviews!",
   "iconName": "glu-review",
-  "categories": [
-    "Code Review",
-    "Automation"
-  ]
+  "categories": ["Code Review", "Automation"]
 }

@@ -16,8 +16,4 @@ jobs:
   review:
     if: github.event.issue.pull_request && contains(github.event.comment.body, '/review')
     uses: whitespaceenergy/internal-whitespace-glu-reviewer/.github/workflows/glu-review-reusable.yml@main
-    secrets:
-      REVIEWER_TOKEN: ${{ secrets.REVIEWER_TOKEN }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      GLU_APP_ID: ${{ secrets.GLU_APP_ID }}
-      GLU_PRIVATE_KEY: ${{ secrets.GLU_PRIVATE_KEY }}
+    secrets: inherit

@@ -1,7 +1,8 @@
 # Minimal workflow file for repositories using reusable workflow
 #
-# Usage:
-#   Comment "/review" on any pull request
+# Two-Tier Review System:
+#   - Automatic security review on PR open/update (fast, Haiku)
+#   - Full comprehensive review via "/review" comment (thorough, Sonnet)
 #
 # Note: Secrets (REVIEWER_TOKEN, ANTHROPIC_API_KEY, GLU_APP_ID, GLU_PRIVATE_KEY)
 #       are configured at the organization level
@@ -9,11 +10,15 @@
 name: Glu Code Review
 
 on:
+  pull_request:
+    types: [opened, synchronize, reopened]
   issue_comment:
     types: [created]
 
 jobs:
   review:
-    if: github.event.issue.pull_request && contains(github.event.comment.body, '/review')
+    if: |
+      github.event_name == 'pull_request' ||
+      (github.event.issue.pull_request && contains(github.event.comment.body, '/review'))
     uses: whitespaceenergy/internal-whitespace-glu-reviewer/.github/workflows/glu-review-reusable.yml@main
     secrets: inherit

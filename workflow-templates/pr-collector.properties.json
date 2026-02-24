@@ -1,0 +1,6 @@
+{
+  "name": "Glu PR Collector",
+  "description": "Collects merged PR metadata for Glu prompt refinement",
+  "iconName": "glu-review.png",
+  "categories": ["Automation"]
+}

@@ -8,6 +8,4 @@ jobs:
   collect:
     if: github.event.pull_request.merged == true
     uses: whitespaceenergy/internal-prompts-glu-solutions/.github/workflows/pr-collector.yml@main
-    secrets:
-      GLU_APP_ID: ${{ secrets.GLU_APP_ID }}
-      GLU_PRIVATE_KEY: ${{ secrets.GLU_PRIVATE_KEY }}
+    secrets: inherit

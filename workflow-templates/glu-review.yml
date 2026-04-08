@@ -4,7 +4,7 @@
 #   - Automatic security review on PR open/update (fast, Haiku)
 #   - Full comprehensive review via "/review" comment (thorough, Sonnet)
 #
-# Note: Secrets (REVIEWER_TOKEN, ANTHROPIC_API_KEY, GLU_APP_ID, GLU_PRIVATE_KEY)
+# Note: Secrets (ANTHROPIC_API_KEY, GLU_APP_ID, GLU_PRIVATE_KEY)
 #       are configured at the organization level
 
 name: Glu Code Review
